@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,300;1,500;1,700&display=swap");
 
+$navTextColor: white;
+$navBgColor: rgb(80, 80, 255);
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -21,8 +25,72 @@ body {
     "sidebar main-content";
 
 	.sidebar {
-		background-color: rgb(127, 185, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding: 30px 0 0 30px;
+        box-sizing: border-box;
+        gap: 40px;
+		background-color: $navBgColor;
+        color: $navTextColor;
         grid-area: sidebar;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            svg {
+                fill: $navTextColor;
+            }
+            span {
+                padding-left: 10px;
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            li {
+                list-style: none;
+                padding-bottom: 5px;
+                background-image: linear-gradient(to right, $navTextColor, $navTextColor);
+                background-position: bottom left;
+                background-repeat: no-repeat;
+                background-size: 0% 2px;
+                transition: background-size .5s ease-in-out;
+
+                &:hover {
+                    background-size: 70% 2px;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    gap: 20px;
+                    text-decoration: none;
+                    color: $navTextColor;
+                    transition: 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: translateX(5px);
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+
+                    svg {
+                        fill: $navTextColor;
+                    }
+                }
+            }
+        }
+
 	}
 
 	.header {
