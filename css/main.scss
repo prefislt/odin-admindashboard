@@ -8,6 +8,7 @@ $boxBgColor: white;
 $boxTextColor: rgb(119, 119, 119);
 $boxButtonColor: rgb(41, 41, 41);
 $boxAccentColor: rgb(255, 156, 69);
+$lineColor: rgb(199, 199, 199);
 
 * {
 	margin: 0;
@@ -25,7 +26,7 @@ body {
 
 .container {
 	display: grid;
-	grid-template-columns: 300px 5fr;
+	grid-template-columns: 300px 1fr;
     grid-template-rows: 175px 1fr; 
 
     grid-template-areas: 
@@ -275,7 +276,7 @@ body {
         grid-template-areas: 
         "projects announcements"
         "projects trending";
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2.5fr 1fr;
         grid-template-rows: 1fr 1fr;
         gap: 20px;
         padding: 20px;
@@ -373,6 +374,44 @@ body {
 
         .announcements {
             grid-area: announcements;
+
+            .a-header {
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                height: 40px;
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+
+            .a-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+                box-sizing: border-box;
+                padding: 40px 40px 40px 40px;
+                box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+
+                background-color: $boxBgColor;
+                border-radius: 7px;
+
+                hr {
+                    background-color: $lineColor;
+                    height: 1px;
+                    border: none;
+                }
+
+                .box {
+                    p:nth-child(1) {
+                        font-weight: 600;
+                        font-size: 0.85rem;
+                    }
+                    p:nth-child(2) {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
         }
 
         .trending {

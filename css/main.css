@@ -15,7 +15,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 300px 5fr;
+  grid-template-columns: 300px 1fr;
   grid-template-rows: 175px 1fr;
   grid-template-areas: "sidebar header" "sidebar main-content";
 }
@@ -225,7 +225,7 @@ body {
 .container .main-content {
   display: grid;
   grid-template-areas: "projects announcements" "projects trending";
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2.5fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
   padding: 20px;
@@ -302,6 +302,37 @@ body {
 }
 .container .main-content .announcements {
   grid-area: announcements;
+}
+.container .main-content .announcements .a-header {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 40px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.container .main-content .announcements .a-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 40px 40px 40px 40px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+  background-color: white;
+  border-radius: 7px;
+}
+.container .main-content .announcements .a-content hr {
+  background-color: rgb(199, 199, 199);
+  height: 1px;
+  border: none;
+}
+.container .main-content .announcements .a-content .box p:nth-child(1) {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.container .main-content .announcements .a-content .box p:nth-child(2) {
+  font-size: 0.7rem;
 }
 .container .main-content .trending {
   grid-area: trending;
