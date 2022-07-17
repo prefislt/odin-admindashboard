@@ -272,12 +272,8 @@ body {
 	}
 
 	.main-content {
-        display: grid;
-        grid-template-areas: 
-        "projects announcements"
-        "projects trending";
-        grid-template-columns: 2.5fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        display: flex;
+        flex-direction: row;
         gap: 20px;
         padding: 20px;
         box-sizing: border-box;
@@ -286,136 +282,196 @@ body {
 
         z-index: 1;
 
-        .projects {
-            grid-area: projects;
-            
-
-            .projects-header {
-                display: flex;
-                align-items: center;
-                box-sizing: border-box;
-                height: 40px;
-                font-weight: 500;
-                font-size: 1.2rem;
+        .content-left {
+            .projects {
+                grid-area: projects;
+                
+    
+                .projects-header {
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    height: 40px;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+    
+                .projects-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                    gap: 20px;
+    
+                    .box {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        gap: 20px;
+                        box-sizing: border-box;
+                        padding: 40px 40px 20px 40px;
+                        border-left: 7px solid $boxAccentColor;
+                        box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    
+                        background-color: $boxBgColor;
+                        border-radius: 7px;
+    
+                        svg {
+                            width: 20px;
+                        }
+    
+                        .box-content { 
+    
+                            p:nth-child(1) { // Box header
+                                font-weight: 600;
+                            }
+    
+                            p:nth-child(2) { // Box text
+                                font-size: 0.8rem;
+                                color: $boxTextColor;
+                            } 
+    
+                        }
+    
+                        .buttons {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            gap: 20px;
+    
+                            a {
+                                transition: 0.2s ease-in-out;
+    
+                                svg {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    height: 100%;
+                                    fill: $boxButtonColor;
+                                }
+    
+                                &:nth-child(1) {
+                                    height: 20px;
+                                }
+    
+                                &:nth-child(3) {
+                                    height: 15px;
+                                }
+    
+                                &:hover {
+                                    transform: scale(1.2);
+                                }
+    
+                                &:active {
+                                    transform: scale(1.0);
+                                }
+                            }
+                        }
+                    }
+                }
             }
+        }
 
-            .projects-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 20px;
+        .content-right {
+            display: flex;
+            flex-direction: column;
+            min-width: 300px;
+            gap: 20px;
 
-                .box {
+            .announcements {
+                grid-area: announcements;
+    
+                .a-header {
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    height: 40px;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+    
+                .a-content {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     gap: 20px;
                     box-sizing: border-box;
-                    padding: 40px 40px 20px 40px;
-                    border-left: 7px solid $boxAccentColor;
+                    padding: 40px 40px 40px 40px;
                     box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
-
+    
                     background-color: $boxBgColor;
                     border-radius: 7px;
-
-                    svg {
-                        width: 20px;
+    
+                    hr {
+                        background-color: $lineColor;
+                        height: 1px;
+                        border: none;
                     }
-
-                    .box-content { 
-
-                        p:nth-child(1) { // Box header
+    
+                    .box {
+                        p:nth-child(1) {
                             font-weight: 600;
+                            font-size: 0.85rem;
                         }
-
-                        p:nth-child(2) { // Box text
-                            font-size: 0.8rem;
-                            color: $boxTextColor;
-                        } 
-
+                        p:nth-child(2) {
+                            font-size: 0.7rem;
+                        }
                     }
+                }
+            }
+    
+            .trending {
+                grid-area: trending;
 
-                    .buttons {
+    
+                .t-header {
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    height: 40px;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+    
+                .t-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 20px;
+                    box-sizing: border-box;
+                    padding: 40px 40px 40px 40px;
+                    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
+    
+                    background-color: $boxBgColor;
+                    border-radius: 7px;
+    
+                    .app {
                         display: flex;
-                        justify-content: flex-end;
+                        flex-direction: row;
                         align-items: center;
                         gap: 20px;
-
-                        a {
-                            transition: 0.2s ease-in-out;
-
-                            svg {
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
+    
+                        .avatar {
+                            height: 40px;
+                            img {
                                 height: 100%;
-                                fill: $boxButtonColor;
-                            }
-
-                            &:nth-child(1) {
-                                height: 20px;
-                            }
-
-                            &:nth-child(3) {
-                                height: 15px;
-                            }
-
-                            &:hover {
-                                transform: scale(1.2);
-                            }
-
-                            &:active {
-                                transform: scale(1.0);
+                                border-radius: 50%;
                             }
                         }
+    
+                        .info {
+                            p:nth-child(1) {
+                                font-weight: 500;
+                                font-size: 0.9rem;
+                            }
+    
+                            p:nth-child(2) {
+                                font-size: 0.8rem;
+                                color: $boxTextColor;
+                            }
+                        }
+    
                     }
                 }
             }
-        }
-
-        .announcements {
-            grid-area: announcements;
-
-            .a-header {
-                display: flex;
-                align-items: center;
-                box-sizing: border-box;
-                height: 40px;
-                font-weight: 500;
-                font-size: 1.2rem;
-            }
-
-            .a-content {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 20px;
-                box-sizing: border-box;
-                padding: 40px 40px 40px 40px;
-                box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
-
-                background-color: $boxBgColor;
-                border-radius: 7px;
-
-                hr {
-                    background-color: $lineColor;
-                    height: 1px;
-                    border: none;
-                }
-
-                .box {
-                    p:nth-child(1) {
-                        font-weight: 600;
-                        font-size: 0.85rem;
-                    }
-                    p:nth-child(2) {
-                        font-size: 0.7rem;
-                    }
-                }
-            }
-        }
-
-        .trending {
-            grid-area: trending;
         }
 	}
 }
