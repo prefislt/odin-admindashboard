@@ -10,6 +10,9 @@ $boxButtonColor: rgb(41, 41, 41);
 $boxAccentColor: rgb(255, 156, 69);
 $lineColor: rgb(199, 199, 199);
 
+$headerLink: rgb(0, 0, 0);
+$headerLinkHover: rgb(80, 80, 80);
+
 * {
 	margin: 0;
 	padding: 0;
@@ -474,4 +477,19 @@ body {
             }
         }
 	}
+}
+
+.headerLink {
+    display: inline-block;
+    text-decoration: none;
+    color: $headerLink;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: $headerLinkHover;
+        transform: translateX(5px);
+    }
+    &:active {
+        transform: scale(0.95);
+    }
 }
