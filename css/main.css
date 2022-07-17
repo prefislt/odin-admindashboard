@@ -162,8 +162,8 @@ body {
 }
 .container .header .h-bottom {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  justify-content: space-between;
+  grid-template-columns: 1fr minmax(200px, 450px);
+  gap: 50px;
 }
 .container .header .h-bottom .left {
   display: flex;
@@ -195,7 +195,7 @@ body {
 .container .header .h-bottom .right {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   padding-right: 50px;
   gap: 30px;
@@ -225,8 +225,8 @@ body {
 .container .main-content {
   display: grid;
   grid-template-areas: "projects announcements" "projects trending";
-  grid-template-columns: 2.5fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: minmax(300px, 1fr) 250px;
+  grid-template-rows: 1fr;
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
@@ -302,6 +302,9 @@ body {
 }
 .container .main-content .announcements {
   grid-area: announcements;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .container .main-content .announcements .a-header {
   display: flex;
@@ -314,7 +317,6 @@ body {
 .container .main-content .announcements .a-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 20px;
   box-sizing: border-box;
   padding: 40px 40px 40px 40px;
