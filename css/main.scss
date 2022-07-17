@@ -138,12 +138,14 @@ body {
                         border: none;
                         border-radius: 20px;
                         height: 30px;
-                        width: 100%;
+                        width: 250px;
                         background-color: $searchBoxColor;
                         padding: 0 10px 0 10px;
                         box-sizing: border-box;
+                        transition: 0.5s ease-in-out;
 
                         &:focus {
+                            width: 100%;
                             outline: none;
                         }
                     }
