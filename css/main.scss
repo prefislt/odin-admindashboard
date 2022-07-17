@@ -108,7 +108,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
         grid-area: header;
 
         z-index: 2;
@@ -311,6 +311,7 @@ body {
                     box-sizing: border-box;
                     padding: 40px 40px 20px 40px;
                     border-left: 7px solid $boxAccentColor;
+                    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
 
                     background-color: $boxBgColor;
                     border-radius: 7px;
