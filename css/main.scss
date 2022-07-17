@@ -2,7 +2,8 @@
 
 $navTextColor: white;
 $navBgColor: rgb(80, 80, 255);
-
+$btnColor: rgb(80, 80, 255);
+$searchBoxColor: rgb(230, 230, 230);
 
 * {
 	margin: 0;
@@ -16,10 +17,8 @@ body {
 
 .container {
 	display: grid;
-    width: 100%;
-    height: 100%;
 	grid-template-columns: 300px 5fr;
-    grid-template-rows: 200px 1fr; 
+    grid-template-rows: 175px 1fr; 
 
     grid-template-areas: 
     "sidebar header"
@@ -96,7 +95,164 @@ body {
 	}
 
 	.header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         grid-area: header;
+
+        .h-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            justify-content: space-between;
+            gap: 50px;
+
+            .left {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                padding-left: 50px;
+                gap: 20px;
+                box-sizing: border-box;
+
+                svg {
+                    width: 18px;
+                }
+                
+                .search {
+                    width: 90%;
+                    input {
+                        border: none;
+                        border-radius: 20px;
+                        height: 30px;
+                        width: 100%;
+                        background-color: $searchBoxColor;
+                        padding: 0 10px 0 10px;
+                        box-sizing: border-box;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 50px;
+                box-sizing: border-box;
+                padding-right: 50px;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 30px;
+
+                .notification {
+
+                    transition: 0.2s ease-in-out;
+
+                    svg {
+                        display: flex;
+                        justify-content: center;
+                        min-width: 24px;
+                        width: 24px;
+                    }
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+
+                    &:active {
+                        transform: scale(1.0);
+                    }
+                }
+
+                .user-avatar {
+                    height: 40px;
+                    img {
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .h-bottom {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            justify-content: space-between;
+
+            .left {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                box-sizing: border-box;
+                padding-left: 50px;
+                gap: 20px;
+
+                .user-avatar {
+                    height: 60px;
+                    img {
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+
+                .hello {
+                    display: flex;
+                    flex-direction: column;
+
+                    span:nth-child(1) {
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                    }
+
+                    span:nth-child(2) {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                padding-right: 50px;
+                gap: 30px;
+
+                .btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    height: 40px;
+                    font-weight: 500;
+                    width: 100%;
+                    padding: 0 10px 0 10px;
+                    border-radius: 20px;
+                    background-color: $btnColor;
+                    color: $navTextColor;
+                    transition: 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.1);
+                        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+                    }
+
+                    &:active {
+                        transform: scale(1.0);
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
 	}
 
 	.main-content {
