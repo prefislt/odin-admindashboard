@@ -36,6 +36,8 @@ body {
     "sidebar header"
     "sidebar main-content";
 
+    transition: 0.5s ease-in-out;
+
 	.sidebar {
         display: flex;
         flex-direction: column;
@@ -48,6 +50,7 @@ body {
         color: $navTextColor;
         grid-area: sidebar;
 
+        transition: 0.5s ease-in-out;
         z-index: 3;
 
         .logo {
@@ -491,5 +494,45 @@ body {
     }
     &:active {
         transform: scale(0.95);
+    }
+}
+
+.nav-btn {
+    display: none;
+}
+
+@media only screen and (max-width: 960px) {
+    .container {
+        display: grid;
+        grid-template-columns: 0px 1fr;
+        grid-template-rows: 175px 1fr; 
+
+        .sidebar {
+            transform: translateX(-300px);
+        }
+
+        .header {
+            .h-top {
+                .nav-btn {
+                    display: flex;
+                    margin-right: 20px;
+                    align-items: center;
+                    cursor: pointer;
+
+                    transition: 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                    &:active {
+                        transform: scale(1.0);
+                    }
+
+                    svg {
+                        transform: scale(2);
+                    }
+                }
+            }
+        }
     }
 }
