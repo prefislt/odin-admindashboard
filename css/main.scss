@@ -315,6 +315,7 @@ body {
 	.main-content {
 		display: flex;
 		flex-direction: row;
+        justify-content: space-between;
 		gap: 20px;
 		padding: 20px;
 		box-sizing: border-box;
@@ -413,7 +414,8 @@ body {
 		.content-right {
 			display: flex;
 			flex-direction: column;
-			width: 300px;
+            min-width: 300px;
+            max-width: 300px;
 			gap: 20px;
 
 			.announcements {
@@ -539,6 +541,11 @@ body {
 
 		.header {
 			.h-top {
+
+                .left {
+                    padding-left: 100px;
+                }
+
 				.nav-btn {
 					display: flex;
 					margin-right: 20px;
@@ -576,6 +583,21 @@ body {
     .container {
         grid-template-rows: 300px 1fr;
 
+        .main-content {
+            .content-right {
+                min-width:100%;
+                max-width:100%;
+            }
+
+            .content-left {
+                .projects {
+                    .projects-grid {
+                        grid-template-columns: repeat(auto-fill, 1fr);
+                    }
+                }
+            }
+        }
+
         .header {
             .h-top {
                 display: flex;
@@ -609,6 +631,19 @@ body {
 
                 .right {
                     padding-right: 0px;
+                }
+            }
+
+            .h-bottom {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .right {
+                    justify-content: center;
+                    align-items: center;
+                    padding-right: 10px;
+                    padding-left: 10px;
                 }
             }
         }

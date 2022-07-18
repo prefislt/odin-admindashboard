@@ -256,6 +256,7 @@ body {
 .container .main-content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
@@ -332,7 +333,8 @@ body {
 .container .main-content .content-right {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
   gap: 20px;
 }
 .container .main-content .content-right .announcements {
@@ -434,6 +436,9 @@ body {
   .container .sidebar {
     transform: translateX(-300px);
   }
+  .container .header .h-top .left {
+    padding-left: 100px;
+  }
   .container .header .h-top .nav-btn {
     display: flex;
     margin-right: 20px;
@@ -461,6 +466,13 @@ body {
 @media only screen and (max-width: 660px) {
   .container {
     grid-template-rows: 300px 1fr;
+  }
+  .container .main-content .content-right {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .container .main-content .content-left .projects .projects-grid {
+    grid-template-columns: repeat(auto-fill, 1fr);
   }
   .container .header .h-top {
     display: flex;
@@ -491,6 +503,17 @@ body {
   }
   .container .header .h-top .right {
     padding-right: 0px;
+  }
+  .container .header .h-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .container .header .h-bottom .right {
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   .container .main-content {
     flex-direction: column-reverse;
