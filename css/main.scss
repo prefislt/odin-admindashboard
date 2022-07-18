@@ -413,7 +413,7 @@ body {
 		.content-right {
 			display: flex;
 			flex-direction: column;
-			min-width: 300px;
+			width: 300px;
 			gap: 20px;
 
 			.announcements {
@@ -570,4 +570,51 @@ body {
 	.nav-unhide {
 		transform: translateX(0px)!important;
 	}
+}
+
+@media only screen and (max-width: 660px) {
+    .container {
+        grid-template-rows: 300px 1fr;
+
+        .header {
+            .h-top {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                width: auto;
+
+                .left {
+                    align-items: center;
+                    padding: 10px;
+                    width: auto;
+
+                    .search {
+                        width: auto;
+                        input {
+                            width: auto;
+                            &:focus {
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    align-items: center;
+                    padding: 10px;
+                    width: auto;
+                }
+
+                .right {
+                    padding-right: 0px;
+                }
+            }
+        }
+
+        .main-content {
+            flex-direction: column-reverse;
+        }
+    }
 }
